@@ -5,9 +5,12 @@ const links = [
   { href: "/ui/modal", label: "modal" },
 ];
 
-export default function SideNav() {
+export default function SideNavLinks() {
   return (
-    <nav className="px-6 pt-6 overflow-y-auto text-base lg:text-sm lg:py-12 lg:pl-6 lg:pr-8 sticky?lg:h-(screen-16)">
+    <nav
+      id="side-nav-links"
+      className="px-6 pt-6 overflow-y-auto text-base lg:text-sm lg:py-12 lg:pl-6 lg:pr-8 sticky?lg:h-(screen-16)"
+    >
       {links.map(({ href, label }, index) => (
         <Link href={href} key={`${href}${label}`}>
           <a
