@@ -7,7 +7,10 @@ export default function Layout({ children }) {
     <div>
       <Header />
       <div className="flex flex-col min-h-screen">
-        <main className="flex-grow w-full max-w-screen-xl mx-auto px-6 pt-16">
+        <main
+          className="flex-grow w-full max-w-screen-xl mx-auto px-6 pt-16"
+          style={{ height: "6000px" }}
+        >
           <div className="grid grid-cols-2">
             <div className="bg-gray-300">
               <SideNavLinks />

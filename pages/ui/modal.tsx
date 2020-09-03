@@ -1,21 +1,20 @@
 import { useState } from "react";
 
 import Button from "@/components/button";
-import Modal from "@/components/modal";
+import Modal from "@/components/modal/modal";
+import useModal from "@/components/modal/useModal";
 
 export default function ModalPage() {
-  const [isOpen, toggleOpen] = useState(false);
-
-  console.log(isOpen);
+  const { isShowing, toggle } = useModal();
 
   return (
     <>
-      <Button type="button" onClick={() => toggleOpen(true)}>
+      <Button type="button" onClick={toggle}>
         モーダルを開く
       </Button>
-      <Modal open={isOpen}>
+      <Modal isShowing={isShowing} hide={toggle} label="modal_label">
         <div className="p-8 bg-white rounded">
-          <Button type="button" onClick={() => toggleOpen(false)}>
+          <Button type="button" onClick={toggle}>
             モーダルを閉じる
           </Button>
         </div>
